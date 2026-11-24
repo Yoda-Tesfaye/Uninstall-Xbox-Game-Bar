@@ -3,17 +3,17 @@
 
 Completely uninstall Xbox Game Bar
 
-<span style="font-size:18px; font-weight:bold; color:red;">1️⃣</span>首先在任务管理器中终止关于Xbox Game Bar的所有进程
+<span style="font-size:18px; font-weight:bold; color:red;">1️⃣</span>先在任务管理器中终止关于Xbox Game Bar的所有进程
 
-<span style="font-size:18px; font-weight:bold; color:red;">2️⃣</span>按win+r输入Powershell并确认
+<span style="font-size:18px; font-weight:bold; color:red;">2️⃣</span>win+r输入Powershell并确认
 
-<span style="font-size:18px; font-weight:bold; color:red;">3️⃣</span>粘贴以下代码并执行
+<span style="font-size:18px; font-weight:bold; color:red;">3️⃣</span>粘贴以下内容并执行
 ```powershell
 Get-AppxPackage Microsoft.XboxGamingOverlay | Remove-AppxPackage
 ```
 这里Xbox Game Bar组件已经基本移除，但是会不时弹出 “ms-gamingoverlay-link” 的弹窗报错
 
-<span style="font-size:18px; font-weight:bold; color:red;">4️⃣</span>这时候新建一个文本文件并用记事本打开，粘贴以下代码
+<span style="font-size:18px; font-weight:bold; color:red;">4️⃣</span>这时候在任意位置新建一个txt文件并用记事本打开，粘贴以下内容
 ```powershell
 @(set ^ "0=%~f0" -des ') &set 1=%*& powershell -nop -c iex(out-string -i (gc -lit $env:0)) & exit /b ')
 # AveYo: fix annoyance after uninstalling Xbox, AveYo 2024.12.27
@@ -67,6 +67,6 @@ $Press_Enter_if_pasted_in_powershell
 ```
 <span style="font-size:18px; font-weight:bold; color:red;">5️⃣</span>Ctrl+s保存文件并关闭，右键文件重命名，将文件后缀名txt改为bat
 
-<span style="font-size:18px; font-weight:bold; color:red;">6️⃣</span>双击执行该文件，然后会弹出一个窗口，点击否
+<span style="font-size:18px; font-weight:bold; color:red;">6️⃣</span>双击执行该文件，然后会弹出一个窗口，点击否即可完成卸载且不再弹窗
 
-到这里就完全卸载了烦人的Xbox Game Bar并不再弹窗
+
